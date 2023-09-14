@@ -2,7 +2,7 @@
     <div>
       <v-btn @click="fetchData">Fetch Data</v-btn>
       <button @click="clearData">Clear Data</button>
-      <v-table fixed-header height="300px">
+      <v-table fixed-header height="300px" density="compact" theme="light">
         <thead>
           <tr>
             <th class="text-left">
@@ -15,8 +15,8 @@
         </thead>
         <tbody>
           <tr v-for="item in liste" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
+            <td class="with-border">{{ item.id }}</td>
+            <td class="with-border">{{ item.name }}</td>
           </tr>
         </tbody>
       </v-table>
@@ -48,10 +48,14 @@
         this.liste = []
       }
     },
-    created() {
-      // Fetch data when the component is created
-      this.fetchData();
-    }
+   
   };
   </script>
   
+
+  <style scoped>
+.with-border {
+  border-left: 1px solid #ccc; /* Add a border to separate the cells */
+  padding: 8px; /* Add some padding for better spacing */
+}
+</style>

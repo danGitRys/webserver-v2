@@ -1,0 +1,8 @@
+<template>
+    <HelloWorld />
+  </template>
+  
+  <script setup>
+    import HelloWorld from '@/components/TestComponent.vue'
+  </script>
+  

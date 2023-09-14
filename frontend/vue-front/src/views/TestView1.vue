@@ -1,8 +1,9 @@
 <template>
-    <HelloWorld />
+    
+    <TestTable/>
   </template>
   
   <script setup>
-    import HelloWorld from '@/components/TestComponent.vue'
+    import TestTable from '@/components/TestTable.vue'
   </script>
   

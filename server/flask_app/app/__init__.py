@@ -66,7 +66,8 @@ def create_app(config_class=Config):
             return jsonify(liste)
         elif request.method == 'POST':
         # Receive JSON data from the POST request
-            data = request.json
+            data = request.get_json()
+            print(data)
         
         # Append the received data to the 'liste' list
             liste.append(data)

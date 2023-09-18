@@ -1,9 +1,12 @@
 <template>
-    
-    <TestTable/>
+    <Topbar/>
+    <LeftBar/>
+   
   </template>
   
   <script setup>
-    import TestTable from '@/components/TestTable.vue'
+   
+    import Topbar from '@/components/TopBarComponent.vue'
+    import LeftBar from '@/components/LeftBarComponent.vue'
   </script>
   

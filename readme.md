@@ -110,4 +110,41 @@ export default {
 ```
 https://vueschool.io/articles/vuejs-tutorials/techniques-for-sharing-data-between-vue-js-components/   
 https://stackoverflow.com/questions/62571970/nuxt-how-to-pass-data-from-page-to-layout
- 
+```
+
+
+```
+import { defineStore } from 'pinia';
+import jwt from 'jsonwebtoken';
+
+export const useAuthStore = defineStore('auth', {
+  state: () => ({
+    token: null,
+    user: null,
+  }),
+
+  actions: {
+    // Action to log in and generate the token
+    login(username, password) {
+      // Perform authentication (e.g., API call to validate credentials)
+      // Replace this with your actual authentication logic
+      if (username === 'user1' && password === 'password1') {
+        // Generate a JWT token with user information
+        const userToken = jwt.sign({ username }, 'your-secret-key', {
+          expiresIn: '1h', // Set token expiration time as needed
+        });
+
+        this.token = userToken;
+        this.user = username;
+      }
+    },
+
+    // Action to log out and clear the token
+    logout() {
+      this.token = null;
+      this.user = null;
+    },
+  },
+});
+
+```

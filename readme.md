@@ -286,3 +286,6 @@ BEGIN
         FROM deleted d;
     END
 END;
+
+
+Test
